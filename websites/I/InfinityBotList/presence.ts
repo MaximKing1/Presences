@@ -49,6 +49,8 @@ presence.on("UpdateData", async () => {
     } else if (window.location.pathname.endsWith("/vote")) {
       presenceData.details = "Voting For:";
       presenceData.state = document.querySelector("#botlistitle").textContent.substring(8);
+    } else if (window.location.pathname.endsWith("/add")) {
+      presenceData.details = "Adding a Server";
     }
   }
 
@@ -63,9 +65,9 @@ presence.on("UpdateData", async () => {
 
   // Legal Pages
   if (window.location.pathname.includes("/legal/")) {
-    presenceData.details = "Viewing Legal";
+    presenceData.details = "Viewing: Legal";
   } else if (window.location.pathname.includes("/privacy/")) {
-    presenceData.details = "Viewing Legal";
+    presenceData.details = "Viewing: Legal";
   }
   
   if (presenceData.details == null) {
